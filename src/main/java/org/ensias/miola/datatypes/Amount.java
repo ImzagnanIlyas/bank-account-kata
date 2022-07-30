@@ -1,6 +1,9 @@
 package org.ensias.miola.datatypes;
 
 import org.ensias.miola.utils.AppUtils;
+import org.ensias.miola.utils.Printer;
+
+import java.text.DecimalFormat;
 
 public class Amount {
     public static final int AMOUNT_MINIMUM_VALUE = 10;
@@ -28,6 +31,11 @@ public class Amount {
 
     public boolean isNegative(){
         return value < 0;
+    }
+
+    public String formatedValue() {
+        DecimalFormat decimalFormater = new DecimalFormat(Printer.DECIMAL_FORMAT);
+        return decimalFormater.format(value);
     }
 
     @Override
