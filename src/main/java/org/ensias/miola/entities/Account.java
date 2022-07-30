@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Account {
-    private String ownerName;
     private AccountNumber number;
     private Pin pin;
     private double balance;
@@ -75,14 +74,6 @@ public class Account {
 
     public void setPin(Pin pin) {
         this.pin = pin;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
     }
 
     public double getBalance() {

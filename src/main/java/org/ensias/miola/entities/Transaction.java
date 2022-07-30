@@ -7,7 +7,6 @@ import org.ensias.miola.utils.Printer;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class Transaction {
     private TransactionType type;

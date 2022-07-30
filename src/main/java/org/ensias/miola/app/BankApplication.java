@@ -86,13 +86,13 @@ public class BankApplication {
                 option = scanner.nextInt();
                 switch (option) {
                     case 1:
-                        showBalance(); break;
+                        showBalance(); backToMenu(); break;
                     case 2:
                         makeDeposit(); break;
                     case 3:
                         makeWithdrawal(); break;
                     case 4:
-                        showTransactionsHistory(); break;
+                        showTransactionsHistory(); backToMenu(); break;
                     case 0:
                         exit(0);
                     default: Printer.printlnc("Please enter an integer value between 0 and 4", Colors.RED);
@@ -153,5 +153,11 @@ public class BankApplication {
             Printer.printTransactionsHistory(transactions);
         else
             Printer.printlnc("Empty", Colors.BLACK);
+    }
+
+    private void backToMenu(){
+        Scanner scanner = new Scanner(System.in);
+        Printer.printlnc("Click Enter key to return", Colors.PURPLE);
+        scanner.nextLine();
     }
 }
