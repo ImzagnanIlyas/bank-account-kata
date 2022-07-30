@@ -3,7 +3,6 @@ package org.ensias.miola.services;
 import org.ensias.miola.datatypes.AccountNumber;
 import org.ensias.miola.datatypes.Pin;
 import org.ensias.miola.entities.Account;
-import org.ensias.miola.utils.AppUtils;
 import org.ensias.miola.utils.LocalDatabase;
 
 public class AuthService {

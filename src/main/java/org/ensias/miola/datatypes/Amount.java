@@ -1,6 +1,5 @@
 package org.ensias.miola.datatypes;
 
-import org.ensias.miola.utils.AppUtils;
 import org.ensias.miola.utils.Printer;
 
 import java.text.DecimalFormat;
@@ -26,7 +25,7 @@ public class Amount {
 
     public void checkMinimum(){
         if(value < AMOUNT_MINIMUM_VALUE)
-            throw new RuntimeException("The amount is under the minimum " + AMOUNT_MINIMUM_VALUE + AppUtils.CURRENNCY);
+            throw new RuntimeException("The amount is under the minimum " + AMOUNT_MINIMUM_VALUE + " " + Printer.CURRENNCY);
     }
 
     public boolean isNegative(){

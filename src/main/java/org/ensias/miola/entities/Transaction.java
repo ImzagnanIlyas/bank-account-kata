@@ -2,7 +2,6 @@ package org.ensias.miola.entities;
 
 import org.ensias.miola.datatypes.Amount;
 import org.ensias.miola.datatypes.TransactionType;
-import org.ensias.miola.utils.AppUtils;
 import org.ensias.miola.utils.Printer;
 
 import java.text.DecimalFormat;

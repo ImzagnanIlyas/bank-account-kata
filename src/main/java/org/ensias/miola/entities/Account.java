@@ -3,7 +3,6 @@ package org.ensias.miola.entities;
 import org.ensias.miola.datatypes.AccountNumber;
 import org.ensias.miola.datatypes.Amount;
 import org.ensias.miola.datatypes.Pin;
-import org.ensias.miola.utils.AppUtils;
 
 import java.util.ArrayList;
 import java.util.List;
