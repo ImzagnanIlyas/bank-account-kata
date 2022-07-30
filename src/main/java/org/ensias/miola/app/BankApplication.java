@@ -42,6 +42,7 @@ public class BankApplication {
         Printer.printlnLine(Colors.YELLOW);
         Printer.printlnc("Welcome to ENSIAS Bank", Colors.YELLOW);
         Printer.printlnLine(Colors.YELLOW);
+        Printer.printTitle("Authentication");
         boolean state = false;
         do {
             System.out.print("Account Number : ");
