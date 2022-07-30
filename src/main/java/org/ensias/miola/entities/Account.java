@@ -29,6 +29,39 @@ public class Account {
         transactions = new ArrayList<>();
     }
 
+    public void deposit(Amount amount){
+        balance += amount.value;
+    }
+
+    public void withdrawal(Amount amount){
+        balance -= amount.value;
+    }
+
+    public void addTransaction(Transaction transaction){
+        transactions.add(transaction);
+    }
+
+    public boolean isWithdrawalAllowed(Amount amount){
+        return amount.value <= balance ;
+    }
+
+    public boolean executeDepositTransaction(Transaction transaction){
+        deposit(transaction.getAmount());
+        transaction.setBalanceAfterTransaction(balance);
+        addTransaction(transaction);
+        return true;
+    }
+
+    public boolean executeWithdrawalTransaction(Transaction transaction){
+        if ( isWithdrawalAllowed(transaction.getAmount()) ) {
+            withdrawal(transaction.getAmount());
+            transaction.setBalanceAfterTransaction(balance);
+            addTransaction(transaction);
+            return true;
+        }
+        return false;
+    }
+
     public String getNumber() {
         return number.value;
     }
@@ -61,8 +94,8 @@ public class Account {
         this.balance = balance;
     }
 
-    public String printBalance(){
-        return AppUtils.decimalFormat.format(balance);
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
     @Override
