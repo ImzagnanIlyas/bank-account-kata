@@ -15,7 +15,7 @@ public class Printer {
 
     public static final String CURRENNCY = "MAD";
 
-    public static final String DECIMAL_FORMAT = "#.00";
+    public static final String DECIMAL_FORMAT = "0.00";
 
     public static final String TIME_FORMAT = "dd/MM/yyyy HH:mm";
 
@@ -119,7 +119,7 @@ public class Printer {
     }
 
     public static String buildHeader(int longestAmountLength){
-        String[] columns = {"OPERATION", "TIME", "AMOUNT", "BALANCE"};
+        String[] columns = {"OPERATION", "TIME", "AMOUNT", "BALANCE AFTER TRANSACTION"};
         StringBuilder headerBuilder = new StringBuilder();
 
         String spacesAfterTimeTitle = " ".repeat(Printer.TIME_FORMAT.length()-columns[1].length());

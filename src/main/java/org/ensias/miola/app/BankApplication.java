@@ -72,9 +72,10 @@ public class BankApplication {
     private void menu(){
         String title = "Menu";
         String[] options = {
-            "1- Make a deposit",
-            "2- Make a withdrawal",
-            "3- See transactions history",
+            "1- See account balance",
+            "2- Make a deposit",
+            "3- Make a withdrawal",
+            "4- See transactions history",
             "0- Exit",
         };
         Scanner scanner = new Scanner(System.in);
@@ -85,20 +86,28 @@ public class BankApplication {
                 option = scanner.nextInt();
                 switch (option) {
                     case 1:
-                        makeDeposit(); break;
+                        showBalance(); break;
                     case 2:
-                        makeWithdrawal(); break;
+                        makeDeposit(); break;
                     case 3:
+                        makeWithdrawal(); break;
+                    case 4:
                         showTransactionsHistory(); break;
                     case 0:
                         exit(0);
-                    default: Printer.printlnc("Please enter an integer value between 0 and 3", Colors.RED);
+                    default: Printer.printlnc("Please enter an integer value between 0 and 4", Colors.RED);
                 }
             }catch (Exception e){
-                Printer.printlnc("Please enter an integer value between 0 and 3", Colors.RED);
+                Printer.printlnc("Please enter an integer value between 0 and 4", Colors.RED);
                 scanner.nextLine();
             }
         }
+    }
+
+    private void showBalance(){
+        String balance = Printer.DECIMAL_FORMATTER.format(AuthService.authenticatedAccount.getBalance());
+        Printer.printTitle("Account Balance : "+balance);
+
     }
 
     private void makeDeposit(){
